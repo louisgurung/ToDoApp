@@ -30,12 +30,35 @@ class App extends Component {
   };
 
   render() {
+    const style = {
+      margin: "20px",
+      fontSize: "50px",
+      fontfamily: "Helvetica",
+      color: "#006400"
+    };
+
+    const inputBox = {
+      padding: "10px",
+      margin: "10px",
+      height: "50px",
+      textAlign: "center",
+      borderRadius: "10",
+      borderWidth: "2",
+      borderColor: "white"
+    };
+
     return (
       <div className="App">
-        <h1>TO-DO-APP--testing123</h1>
+        <h1 style={style}>TO-DO-APP</h1>
+        <h6>(Click on the text to delete it)</h6>
         <form onSubmit={this.onSubmit}>
-          <input value={this.state.text} onChange={this.onChange} />
-          <button>Submit</button>
+          <input
+            value={this.state.text}
+            onChange={this.onChange}
+            style={inputBox}
+          />
+
+          <button style={{ backgroundColor: "#6B8E23" }}>Submit</button>
         </form>
         <ListofToDos
           items={this.state.items}
